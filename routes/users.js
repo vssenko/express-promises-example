@@ -11,6 +11,13 @@ router.get('/:id', function(req, res) {
   res.promise(() => userService.getById(req.params.id));
 });
 
-
+router.get('/:id/profilePic', async function (req, res){
+  try{
+    const url = await userService.getUserProfilePicUrl(req.params.id);
+    res.redirect(url);
+  } catch(e){
+    res.promise(Promise.reject(e));
+  }
+});
 
 module.exports = router;

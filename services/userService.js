@@ -6,7 +6,10 @@ const users = [
 const getAll = () => Promise.resolve(users);
 const getById = (id) => Promise.resolve(users.find(u => u.id == id));
 
+const getUserProfilePicUrl = (id) => Promise.resolve(`/img/${id}`);
+
 module.exports = {
   getById,
-  getAll
+  getAll,
+  getUserProfilePicUrl
 };
