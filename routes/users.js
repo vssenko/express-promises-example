@@ -7,6 +7,10 @@ router.get('/', function(req, res) {
   res.promise(userService.getAll());
 });
 
+router.get('/errorRoute', function(req, res){
+  throw new Error('This is synchronous error!');
+});
+
 router.get('/:id', function(req, res) {
   res.promise(() => userService.getById(req.params.id));
 });
