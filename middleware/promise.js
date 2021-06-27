@@ -1,7 +1,7 @@
 const handleResponse = (res, data) => res.status(200).send(data);
 const handleError = (res, err = {}) => res.status(err.status || 500).send({error: err.message});
 
-module.exports = function promiseMiddleware(){
+module.exports = function promiseMiddleware() {
   return (req,res,next) => {
     res.promise = (p) => {
       let promiseToResolve;
