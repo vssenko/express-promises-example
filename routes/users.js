@@ -16,10 +16,10 @@ router.get('/:id', function(req, res) {
 });
 
 router.get('/:id/profilePic', async function (req, res) {
-  try{
+  try {
     const url = await userService.getUserProfilePicUrl(req.params.id);
     res.redirect(url);
-  } catch(e){
+  } catch(e) {
     res.promise(Promise.reject(e));
   }
 });
