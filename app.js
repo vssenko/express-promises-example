@@ -1,7 +1,7 @@
 const createError  = require('http-errors');
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const promiseMiddleware = require('./middlewares/promise');
+const promiseMiddleware = require('./middleware/promise');
 //...
 const app = express();
 app.use(express.json());
