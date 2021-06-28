@@ -9,7 +9,7 @@ router.get('/:id', function(req, res) {
    * directory, not the router file location.
    */
   const fileStream = fs.createReadStream(
-    path.join(process.cwd(), './assets/img/profilePic.jpg')
+    path.join(process.cwd(), './assets/img/profilePic.png')
   );
   fileStream.pipe(res);
 });
